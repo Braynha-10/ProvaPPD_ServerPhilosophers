@@ -42,13 +42,15 @@ public class PhilosopherClient {
             }
 
         } catch (IOException e) {
+            System.err.println("Erro ao conectar com o servidor.");
             e.printStackTrace();
         }
     }
 
     private void think(PrintWriter out, BufferedReader in, Random random) throws InterruptedException {
         out.println("THINK");
-        int thinkingTime = 1000; // Tempo fixo para pensar
+        // int thinkingTime = 1000; Teste com tempo fixo para pensar
+        int thinkingTime = Math.max(0, (int) (random.nextGaussian() * 2 + 5) * 1000);
         System.out.println("Filósofo " + Name + " pensando por " + thinkingTime + "ms");
         Thread.sleep(thinkingTime);
     }
