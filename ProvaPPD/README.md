@@ -1,4 +1,14 @@
-Discorrendo sobre o código parte do ResourceServer.
+## Para rodar o código:
+- Inicie ResourceServer, espere o status de funcionamento dele trabalhando na porta 5000.
+- Inicie o PhilosperClient e posteriormente clique no terminal do filosofo e digite um nome para ele.
+- Agora verifique a conexão estabelecida com o server, e os logs ocorrendo.
+- Podem ser adicionados até 5 filosofos,.
+- Os adicionados podem ser desconectados e reconectados somente é necessario na hora de adicionar o mesmo que ja perdeu sua conexão colocando o seu respectivo nome que ja havia sido registrado na sua criação.
+- Se houver a tentativa de ser adicionado mais do que 5 filosofos mesmo com a mesa vazia, por exemplo se os que ja tiham sido adicionados forem desconectados, ele irá dar um erro tratado e nao permitira, a ideia e que a mesa feche após a adição de 5 filosofos e só permita a desconexão e reconexão com os mesmos.
+
+
+
+## Discorrendo sobre o código parte do ResourceServer.
 
 Bom nas primeiras linhas de códigos temos a indicação da pasta da localização e importação de bibliotecas que e recursos utilizados.
 
@@ -28,7 +38,7 @@ Encerramos com uma função que acabamos não utilizando a partir da linha 255 e
 
 
 
-Discorrendo sobre o código parte do PhilosopherClient.
+## Discorrendo sobre o código parte do PhilosopherClient.
 
 O código do cliente filósofo é mais simples que o servidor. Novamente, são indicadas a pasta de localização e as bibliotecas utilizadas. A classe do filósofo é definida com atributos como servidor (localhost), porta, ID e nome. Esses dados são fundamentais para a comunicação com o servidor. Nessa etapa temos também um tipo de log que vai ser mostrado para esse cliente mas é um log limitado a instância, demonstrando o que o mesmo está realizando quem é esse filósofo e por quanto tempo ele demorou para realizar aquela ação dessa forma é descrito no nosso log que é feito justamente com base dessa intermediação do servidor das threads.
 
@@ -41,6 +51,6 @@ O código utiliza try-catch para tratar desconexões e exceções gerais, garant
 
 
 
-Considerações finais
+## Considerações finais
 
 A dinâmica principal do exercício foi implementar a conexão entre filósofos e um servidor intermediador, garantindo a recuperação de conexões e uma execução consistente do problema do jantar dos filósofos. Apesar de haver espaço para melhorias, como limitar o número de ações ou incluir características como comportamento egoísta, acredito que objetivo principal foi alcançado com sucesso. Ciente das claras e das diversas possibilidades de atualização da aplicação, cito aqui o sentido do fluxo da mesma, potrtanto: a iniciação do servidor, a criação dos filósofos com os seus respectivos nomes, a observação da dinamica do jantar dos filósofos ocorrendo corretamente tanto no servidor quanto no terminal dos filósofos, os erros podem acontecer mas que são previstos são a inserção de mais filósofos do que a mesa comporta, a inserção de algum filósofo que já se encontra ativo na mesa, e as falhas de comunicações e conexões com o servidor perante a inciação de um novo servidor ou de algum outro tipo de erro previsto nas excessoes de start. Concluí se que a perda de conexão e reconexão dos clientes filosofos acontece como finalidade principal desse exercício perante aos requisitos do jantar dos filósofos num server Socket.
